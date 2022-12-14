@@ -1,8 +1,5 @@
-export type Message = {
-  body: String
-}
+import type { GetUsersQuery } from "./graphql/generated"
 
-export type User = {
-  name: String
-  messages: Message[]
-}
+export type Message = GetUsersQuery["users"][0]["messages"][0]
+
+export type User = GetUsersQuery["users"][0]
